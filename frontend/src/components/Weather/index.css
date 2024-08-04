@@ -1,0 +1,59 @@
+/* Import Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.weather-container {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.weather-form {
+  margin: 20px 0;
+}
+
+.weather-form div {
+  margin-bottom: 15px;
+}
+
+.weather-form label {
+  font-weight: 700;
+}
+
+.weather-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.weather-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.weather-form button:hover {
+  background-color: #0056b3;
+}
+
+.weather-result {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: left;
+  display: inline-block;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-result h3 {
+  margin-top: 0;
+}
+
+.error {
+  color: red;
+}
