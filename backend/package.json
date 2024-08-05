@@ -12,6 +12,6 @@
   "scripts": {
     "start": "node app.js",
     "build": "npm i",
-    "postinstall": "npm rebuild sqlite3"
+    "postinstall": "npm rebuild bcrypt && npm rebuild sqlite3"
   }
 }
