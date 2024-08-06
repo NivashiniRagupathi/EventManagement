@@ -20,6 +20,13 @@ const App = () => {
     }
   }, [user, navigate]);
 
+  useEffect(() => {
+    console.log('User in App:', user);
+    if (user) {
+      navigate('/'); // Redirect if user is authenticated
+    }
+  }, [user, navigate]);
+
   return (
     <AuthProvider>
       <Header />
