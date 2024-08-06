@@ -21,7 +21,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:4000/api/login', { email, password });
+      const response = await axios.post('https://eventmanagement-s52a.onrender.com/api/login', { email, password });
       const { token } = response.data;
       Cookies.set('token', token, { expires: 1 }); // Set cookie for 1 day
       setUser({ token });
