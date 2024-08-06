@@ -7,9 +7,14 @@ const routes = require('./routes');
 const app = express();
 app.use(bodyParser.json());
 
-app.use(cors({
-  origin: 'https://event-management-eight-ashen.vercel.app/login'
-}));
+const corsOptions = {
+  origin: 'https://event-management-eight-ashen.vercel.app', // Replace with your frontend's URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow credentials if needed
+  optionsSuccessStatus: 204 // Some legacy browsers choke on 204
+};
+
+app.use(cors(corsOptions));
 
 const initializeDBAndServer = async () => {
   try {
