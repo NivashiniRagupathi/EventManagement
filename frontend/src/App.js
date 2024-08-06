@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useAuth} from './components/AuthContext';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -11,25 +10,15 @@ import Weather from './components/Weather';
 import './App.css';
 
 const App = () => {
-  const { user } = useAuth();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log('User in App:', user);
-    if (user) {
-      navigate('/'); // Redirect if user is authenticated
-    }
-  }, [user, navigate]);
-
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-        <Route path="/events" element={<ProtectedRoute><Events /></ProtectedRoute>} />
-        <Route path="/weather" element={<ProtectedRoute><Weather /></ProtectedRoute>} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+        <Route exact path="/events" element={<ProtectedRoute><Events /></ProtectedRoute>} />
+        <Route exact path="/weather" element={<ProtectedRoute><Weather /></ProtectedRoute>} />
       </Routes>
     </>
   );
