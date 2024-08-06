@@ -5,8 +5,11 @@ const initializeDB = require('./database');
 const routes = require('./routes');
 
 const app = express();
-app.use(cors());
 app.use(bodyParser.json());
+
+app.use(cors({
+  origin: 'https://event-management-eight-ashen.vercel.app/login'
+}));
 
 const initializeDBAndServer = async () => {
   try {
