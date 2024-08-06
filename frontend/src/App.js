@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useAuth, AuthProvider } from './components/AuthContext';
+import { useAuth} from './components/AuthContext';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -22,7 +22,7 @@ const App = () => {
   }, [user, navigate]);
 
   return (
-    <AuthProvider>
+    <>
       <Header />
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/events" element={<ProtectedRoute><Events /></ProtectedRoute>} />
         <Route path="/weather" element={<ProtectedRoute><Weather /></ProtectedRoute>} />
       </Routes>
-    </AuthProvider>
+    </>
   );
 };
 
