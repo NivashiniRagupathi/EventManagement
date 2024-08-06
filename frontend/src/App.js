@@ -15,12 +15,6 @@ const App = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
-      navigate('/login');
-    }
-  }, [user, navigate]);
-
-  useEffect(() => {
     console.log('User in App:', user);
     if (user) {
       navigate('/'); // Redirect if user is authenticated

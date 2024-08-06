@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const token = Cookies.get('token');
+    console.log('Token from cookies:', token); // Debug token reading
     if (token) {
       // Validate token or fetch user data if needed
       setUser({ token });
