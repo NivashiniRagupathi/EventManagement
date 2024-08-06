@@ -5,7 +5,6 @@ const initializeDB = require('./database');
 const routes = require('./routes');
 
 const app = express();
-app.use(bodyParser.json());
 
 const corsOptions = {
   origin: 'https://event-management-eight-ashen.vercel.app', // Replace with your frontend's URL
@@ -15,6 +14,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(bodyParser.json());
 
 const initializeDBAndServer = async () => {
   try {
